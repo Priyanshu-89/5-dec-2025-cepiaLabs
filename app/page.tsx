@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="text-center bg-slate-700 w-full h-screen py-16">
@@ -5,12 +7,12 @@ export default function Home() {
       <p className="mt-4 text-lg text-[#CDBCA8]">
         Browse blogs from JSONPlaceholder
       </p>
-      <a
+      <Link
         href="/blogs"
         className="mt-6 inline-block px-6 py-2 bg-[#CDBCA8] text-[#6B7A89] rounded-lg font-semibold hover:bg-[#BFB195] transition"
       >
         View All Blogs
-      </a>
+      </Link>
     </div>
   );
 }

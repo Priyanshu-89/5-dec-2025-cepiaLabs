@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 type Props = {
   params: { id: string };
 };
+
 
 export default async function BlogDetailPage(
   { params }: { params: Promise<{ id: string }> }
@@ -32,12 +35,12 @@ export default async function BlogDetailPage(
           <p className="text-[#CDBCA8] font-semibold text-sm">{user.email}</p>
         </div>
 
-        <a
+        <Link
           href="/blogs"
           className="mt-6 inline-block text-[#324b63] hover:underline"
         >
           ← Back to Blogs
-        </a>
+        </Link>
       </div>
     </div>
   );

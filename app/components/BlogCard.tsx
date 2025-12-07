@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type BlogCardProps = {
   id: number;
   title: string;
@@ -10,12 +12,12 @@ export default function BlogCard({ id, title, body }: BlogCardProps) {
       <h2 className="text-xl font-semibold text-[#c19d74]">{title}</h2>
       <p className="text-[#CDBCA8]/90 mt-2">{body.slice(0, 50)}...</p>
 
-      <a
+      <Link
         href={`/blogs/${id}`}
         className="text-[#CDBCA8] mt-4 inline-block font-medium hover:underline"
       >
         Read More →
-      </a>
+      </Link>
     </div>
   );
 }
