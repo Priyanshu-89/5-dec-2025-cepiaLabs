@@ -2,16 +2,18 @@ type Props = {
   params: { id: string };
 };
 
-export default async function BlogDetailPage({ params }: Props) {
+export default async function BlogDetailPage(
+  { params }: { params: Promise<{ id: string }> }
+) {
   const { id } = await params;
 
-  // Fetch post
+ 
   const postRes = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${id}`
   );
   const post = await postRes.json();
 
-  // Fetch author
+
   const userRes = await fetch(
     `https://jsonplaceholder.typicode.com/users/${post.userId}`
   );
